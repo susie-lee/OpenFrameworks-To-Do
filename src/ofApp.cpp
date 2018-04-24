@@ -23,12 +23,12 @@ void toDoList::draw() {
     glEnable(GL_NORMALIZE);
     glEnable(GL_LIGHT0);
     glDisable(GL_COLOR_MATERIAL);
-//
+
     ofPushMatrix();
-//
+
     flower.enableMaterials();
   flower.drawFaces();
-//
+
     ofPopMatrix();
     glDisable(GL_LIGHT0);
     glDisable(GL_NORMALIZE);
