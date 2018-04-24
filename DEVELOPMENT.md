@@ -8,3 +8,12 @@ WEEK ONE:
     goals for next week
   - get list and flower GUI up
   - be able to type tasks in list
+
+WEEK TWO:
+    completed:
+  - change idea to using Blender to develop flower, OF addon
+  ofxAssimpModelLoader to load in 3D export
+  - create healthy flower on Blender
+  
+    difficulties
+  - figuring out how to display lighting on 3D model using ofSetupOpenGL
