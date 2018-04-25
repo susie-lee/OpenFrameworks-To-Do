@@ -33,6 +33,24 @@ void window::keyPressed(int key) {
     }
 }
 
+//bool window::mouseInside(int rectangleNum) {
+//    int mouseX = ofGetMouseX();
+//    int mouseY = ofGetMouseY();
+//    
+//    if (mouseX > rectangleNum * 210 && mouseX < rectangleNum * 210 + 200) {
+//        if (mouseY > )
+//    }
+//    
+//}
+//
+//void window::mousePressed(int x, int y, int button) {
+//    if (button == 0) {
+//        for (int i = 0; i < NoteList::notes.size(); i++) {
+//            
+//        }
+//    }
+//}
+
 void window::draw() {
   flower.setPosition(ofGetWidth()*3/4, (float)ofGetHeight() * 0.75 , 0);
     ofEnableDepthTest();
