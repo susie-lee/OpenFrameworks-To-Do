@@ -2,20 +2,27 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "note.h"
+#include <vector>
 
 enum Status {
-    IDLE = 0,
-    NEW_NOTE,
-    THRIVING,
-    DYING
+  THRIVING = 0,
+  WHITHERING,
+  NEAR_DEATH,
+  NEW_NOTE,
+  TYPING
 };
 
 class window : public ofBaseApp {
 public:
-    Status current_status = IDLE;
+  Status current_status = THRIVING;
   void setup();
   void draw();
   void keyPressed(int key);
-ofxAssimpModelLoader flower;
-    Note note;
+
+  ofxAssimpModelLoader flower;
+  Note note;
+  string typeStr;
+    vector<ofRectangle> notes;
+
+  ofTrueTypeFont verdana14;
 };

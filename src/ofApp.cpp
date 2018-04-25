@@ -7,17 +7,28 @@ void window::setup() {
   ofSetWindowTitle("Flower Productivity");
   ofBackground(230,230,230);
   flower.loadModel("flower.obj");
+
+    typeStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ\nabcdefghijklmnopqrstuvwxyz\n0123456789,:&!?";
 }
 
 void window::keyPressed(int key) {
 
-    switch(key) {
-        case 'n':
-            current_status = NEW_NOTE;
-            break;
-        case OF_KEY_F12:
-            ofToggleFullscreen();
-            break;
+    if (key == 'n' && current_status != TYPING) {
+      current_status = NEW_NOTE;
+
+    } else if (key == OF_KEY_F12) {
+      ofToggleFullscreen();
+
+    } else if (current_status == TYPING) {
+      if (key == OF_KEY_DEL || key == OF_KEY_BACKSPACE){
+      typeStr = typeStr.substr(0, typeStr.length()-1);
+
+      } else if(key == OF_KEY_RETURN ){
+        current_status = THRIVING;
+
+      } else {
+        ofAppendUTF8(typeStr,key);
+      }
     }
 }
 
@@ -41,9 +52,16 @@ void window::draw() {
     glDisable(GL_LIGHTING);
 
     ofSetColor(ofColor::lemonChiffon);
-    ofDrawRectangle(10,10,200,100);
-    
+    ofRectangle initial(10,10,200,100);
+    ofDrawRectangle(initial);
+    notes.push_back(initial);
+
     if (current_status == NEW_NOTE) {
         note.newNote();
+        current_status = THRIVING;
+    }
+    
+    else if (current_status == TYPING) {
+        
     }
 }
