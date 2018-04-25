@@ -1,14 +1,21 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
+#include "note.h"
 
-class toDoList : public ofBaseApp {
+enum Status {
+    IDLE = 0,
+    NEW_NOTE,
+    THRIVING,
+    DYING
+};
+
+class window : public ofBaseApp {
 public:
+    Status current_status = IDLE;
   void setup();
   void draw();
   void keyPressed(int key);
 ofxAssimpModelLoader flower;
-    ofLight pointLight;
-    ofLight pointLight2;
-    ofLight pointLight3;
+    Note note;
 };

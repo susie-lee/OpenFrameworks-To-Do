@@ -1,22 +1,28 @@
 #include "ofApp.h"
+#include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
+#include <iostream>
 
-void toDoList::setup() {
+void window::setup() {
   ofSetWindowTitle("Flower Productivity");
-  ofBackground(200,200,200);
+  ofBackground(230,230,230);
   flower.loadModel("flower.obj");
-  //flower.drawFaces();
 }
 
-void toDoList::keyPressed(int key) {
-  if (key == OF_KEY_F12) {
-    ofToggleFullscreen();
-    return;
-  }
+void window::keyPressed(int key) {
+
+    switch(key) {
+        case 'n':
+            current_status = NEW_NOTE;
+            break;
+        case OF_KEY_F12:
+            ofToggleFullscreen();
+            break;
+    }
 }
 
-void toDoList::draw() {
-  flower.setPosition(ofGetWidth()/2, (float)ofGetHeight() * 0.75 , 0);
+void window::draw() {
+  flower.setPosition(ofGetWidth()*3/4, (float)ofGetHeight() * 0.75 , 0);
     ofEnableDepthTest();
     ofEnableLighting();
     glEnable(GL_LIGHTING);
@@ -27,12 +33,17 @@ void toDoList::draw() {
     ofPushMatrix();
 
     flower.enableMaterials();
-  flower.drawFaces();
+    flower.drawFaces();
 
     ofPopMatrix();
     glDisable(GL_LIGHT0);
     glDisable(GL_NORMALIZE);
     glDisable(GL_LIGHTING);
+
+    ofSetColor(ofColor::lemonChiffon);
+    ofDrawRectangle(10,10,200,100);
     
-    flower.drawFaces();
+    if (current_status == NEW_NOTE) {
+        note.newNote();
+    }
 }
