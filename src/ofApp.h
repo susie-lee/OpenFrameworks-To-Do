@@ -1,7 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
-#include "note.h"
+#include "noteList.h"
 #include <vector>
 
 enum Status {
@@ -20,7 +20,7 @@ public:
   void keyPressed(int key);
 
   ofxAssimpModelLoader flower;
-  Note note;
+  NoteList noteList;
   string typeStr;
     vector<ofRectangle> notes;
 

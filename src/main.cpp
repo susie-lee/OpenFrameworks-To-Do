@@ -1,6 +1,6 @@
 #include "ofMain.h"
 #include "ofApp.h"
-#include "note.h"
+#include "noteList.h"
 #include "ofxAssimpModelLoader.h"
 
 #include <iostream>

@@ -14,6 +14,7 @@ void window::setup() {
 void window::keyPressed(int key) {
 
     if (key == 'n' && current_status != TYPING) {
+        
       current_status = NEW_NOTE;
 
     } else if (key == OF_KEY_F12) {
@@ -50,14 +51,11 @@ void window::draw() {
     glDisable(GL_LIGHT0);
     glDisable(GL_NORMALIZE);
     glDisable(GL_LIGHTING);
-
-    ofSetColor(ofColor::lemonChiffon);
-    ofRectangle initial(10,10,200,100);
-    ofDrawRectangle(initial);
-    notes.push_back(initial);
+    
+    noteList.drawNotes();
 
     if (current_status == NEW_NOTE) {
-        note.newNote();
+        noteList.addNote();
         current_status = THRIVING;
     }
     
