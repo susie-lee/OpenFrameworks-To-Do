@@ -1,6 +1,7 @@
 #include "ofApp.h"
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
+#include "noteList.h"
 #include <iostream>
 
 void window::setup() {
@@ -36,17 +37,17 @@ void window::keyPressed(int key) {
 //bool window::mouseInside(int rectangleNum) {
 //    int mouseX = ofGetMouseX();
 //    int mouseY = ofGetMouseY();
-//    
+//
 //    if (mouseX > rectangleNum * 210 && mouseX < rectangleNum * 210 + 200) {
 //        if (mouseY > )
 //    }
-//    
+//
 //}
 //
 //void window::mousePressed(int x, int y, int button) {
 //    if (button == 0) {
 //        for (int i = 0; i < NoteList::notes.size(); i++) {
-//            
+//
 //        }
 //    }
 //}

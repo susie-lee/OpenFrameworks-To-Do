@@ -1,13 +1,14 @@
 #pragma once
 #include "ofMain.h"
+#include "note.h"
 #include <vector>
 
-class NoteList {
+class NoteList  {
 public:
-  vector<ofRectangle*> notes;
+    static vector<Note*> notes;
 
   NoteList();
   ~NoteList();
-  void addNote();
+  static void addNote(Note *note);
   void drawNotes();
 };

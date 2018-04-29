@@ -2,6 +2,7 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "noteList.h"
+#include "note.h"
 #include <vector>
 
 enum Status {
