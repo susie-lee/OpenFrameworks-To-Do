@@ -1,8 +1,9 @@
 #include "ofApp.h"
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
-//#include "noteList.h"
-#include "note.h"
+////#include "noteList.h"
+//#include "note.h"
+//#include "checkboxList.h"
 #include <iostream>
 
 void window::setup() {
@@ -81,6 +82,7 @@ void window::draw() {
     glDisable(GL_LIGHTING);
     
     noteList.drawNotes();
+    checkboxList.drawCheckboxes();
 
     if (current_status == NEW_NOTE) {
         noteList.addNote();

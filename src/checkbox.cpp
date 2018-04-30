@@ -1,5 +1,4 @@
 #include "checkbox.h"
-//#include "noteList.h"
 #include <vector>
 
 Checkbox::Checkbox(ofRectangle* ofRect, int coordX, int coordY) :

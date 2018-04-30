@@ -14,8 +14,4 @@ public:
     ofRectangle* getOfRectangle();
     int getCoordX();
     int getCoordY();
-    
-    void setUpNote();
-    
-    //NoteList noteList;
 };

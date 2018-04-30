@@ -15,6 +15,4 @@ public:
     ofRectangle* getOfRectangle();
     int getCoordX();
     int getCoordY();
-    
-    void setUpCheckbox();
 };

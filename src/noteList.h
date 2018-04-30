@@ -14,7 +14,7 @@ public:
   ~NoteList();
   void addNote();
   void drawNotes();
-    Note* getNote(int noteNum);
-    bool mouseInside();
-    bool mousePressedInside(int x, int y, int button);
+  Note* getNote(int noteNum);
+//    bool mouseInside();
+//    bool mousePressedInside(int x, int y, int button);
 };

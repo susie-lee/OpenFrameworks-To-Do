@@ -36,7 +36,7 @@ void NoteList::addNote() {
     
     cout << placementX << "," << placementY << "\n";
     
-    ofSetColor(ofColor::lemonChiffon);
+//    ofSetColor(ofColor::lemonChiffon);
     ofRectangle* newRect = new ofRectangle(placementX, placementY, 300, 180);
     Note *newNote = new Note(newRect, placementX, placementY);
     notes.push_back(newNote);
@@ -44,6 +44,7 @@ void NoteList::addNote() {
 
 void NoteList::drawNotes() {
   for (Note* note : notes) {
+      ofSetColor(ofColor::lemonChiffon);
       ofDrawRectangle(*note->getOfRectangle());
   }
 }
@@ -65,36 +66,36 @@ Note* NoteList::getNote(int noteNum) {
     }
 }
 
-bool NoteList::mouseInside() {
-    int mouseX = ofGetMouseX();
-    int mouseY = ofGetMouseY();
-    for (int i = 0; i < notes.size(); i++) {
-        Note* currentNote = getNote(i);
-        if (mouseX > currentNote->getCoordX() && mouseX < currentNote->getCoordX() + 300) {
-            if (mouseY > currentNote->getCoordY() && mouseY < currentNote->getCoordY() + 180) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-}
-
-bool NoteList::mousePressedInside(int x, int y, int button) {
-    if (button == 0) {
-        for (int i = 0; i < notes.size(); i++) {
-            Note* currentNote = getNote(i);
-            if (x > currentNote->getCoordX() && x < currentNote->getCoordX() + 300) {
-                if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 180) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                return false;
-            }
-        }
-    }
-}
+//bool NoteList::mouseInside() {
+//    int mouseX = ofGetMouseX();
+//    int mouseY = ofGetMouseY();
+//    for (int i = 0; i < notes.size(); i++) {
+//        Note* currentNote = getNote(i);
+//        if (mouseX > currentNote->getCoordX() && mouseX < currentNote->getCoordX() + 300) {
+//            if (mouseY > currentNote->getCoordY() && mouseY < currentNote->getCoordY() + 180) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        } else {
+//            return false;
+//        }
+//    }
+//}
+//
+//bool NoteList::mousePressedInside(int x, int y, int button) {
+//    if (button == 0) {
+//        for (int i = 0; i < notes.size(); i++) {
+//            Note* currentNote = getNote(i);
+//            if (x > currentNote->getCoordX() && x < currentNote->getCoordX() + 300) {
+//                if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 180) {
+//                    return true;
+//                } else {
+//                    return false;
+//                }
+//            } else {
+//                return false;
+//            }
+//        }
+//    }
+//}
