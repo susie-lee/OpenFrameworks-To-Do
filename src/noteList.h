@@ -3,12 +3,16 @@
 #include "note.h"
 #include <vector>
 
-class NoteList  {
-public:
-    static vector<Note*> notes;
+using namespace std;
 
+class NoteList  {
+private:
+    vector<Note*> notes;
+    
+public:
   NoteList();
   ~NoteList();
-  static void addNote(Note *note);
+  void addNote();
   void drawNotes();
+    
 };

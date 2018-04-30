@@ -18,5 +18,5 @@ public:
     
     void setUpNote();
     
-    NoteList noteList;
+    //NoteList noteList;
 };

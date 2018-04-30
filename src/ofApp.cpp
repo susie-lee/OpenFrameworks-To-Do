@@ -2,6 +2,7 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "noteList.h"
+#include "note.h"
 #include <iostream>
 
 void window::setup() {
@@ -74,7 +75,7 @@ void window::draw() {
     noteList.drawNotes();
 
     if (current_status == NEW_NOTE) {
-        noteList.addNote();
+        note.setUpNote();
         current_status = THRIVING;
     }
     

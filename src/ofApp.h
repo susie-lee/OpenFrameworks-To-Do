@@ -26,4 +26,5 @@ public:
     vector<ofRectangle> notes;
 
   ofTrueTypeFont verdana14;
+    Note note;
 };
