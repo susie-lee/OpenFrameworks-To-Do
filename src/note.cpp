@@ -21,3 +21,4 @@ int Note::getCoordX() {
 int Note::getCoordY() {
     return coordY;
 }
+

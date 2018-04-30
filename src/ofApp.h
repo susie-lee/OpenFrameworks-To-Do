@@ -23,7 +23,6 @@ public:
   ofxAssimpModelLoader flower;
   NoteList noteList;
   string typeStr;
-    vector<ofRectangle> notes;
 
   ofTrueTypeFont verdana14;
     Note note;

@@ -35,6 +35,14 @@ void window::keyPressed(int key) {
     }
 }
 
+//Note* window::getNote(int rectangleNum) {
+//    for (int i = 0; i < notes.size(); i++) {
+//        if (i == rectangleNum) {
+//            return notes[i];
+//        }
+//    }
+//}
+//
 //bool window::mouseInside(int rectangleNum) {
 //    int mouseX = ofGetMouseX();
 //    int mouseY = ofGetMouseY();
@@ -44,10 +52,10 @@ void window::keyPressed(int key) {
 //    }
 //
 //}
-//
+
 //void window::mousePressed(int x, int y, int button) {
 //    if (button == 0) {
-//        for (int i = 0; i < NoteList::notes.size(); i++) {
+//        for (int i = 0; i < notes.size(); i++) {
 //
 //        }
 //    }
