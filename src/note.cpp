@@ -1,5 +1,4 @@
 #include "note.h"
-#include "noteList.h"
 #include <vector>
 
 Note::Note(ofRectangle* ofRect, int coordX, int coordY) :
@@ -21,4 +20,3 @@ int Note::getCoordX() {
 int Note::getCoordY() {
     return coordY;
 }
-

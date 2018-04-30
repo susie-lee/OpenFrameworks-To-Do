@@ -2,7 +2,7 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "noteList.h"
-#include "note.h"
+#include "checkboxList.h"
 #include <vector>
 
 enum Status {
@@ -22,8 +22,8 @@ public:
 
   ofxAssimpModelLoader flower;
   NoteList noteList;
+    CheckboxList checkboxList;
   string typeStr;
 
   ofTrueTypeFont verdana14;
-    Note note;
 };

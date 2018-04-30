@@ -1,7 +1,7 @@
 #include "ofApp.h"
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
-#include "noteList.h"
+//#include "noteList.h"
 #include "note.h"
 #include <iostream>
 
@@ -83,7 +83,8 @@ void window::draw() {
     noteList.drawNotes();
 
     if (current_status == NEW_NOTE) {
-        note.setUpNote();
+        noteList.addNote();
+        checkboxList.addCheckbox();
         current_status = THRIVING;
     }
     

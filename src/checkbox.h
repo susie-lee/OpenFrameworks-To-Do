@@ -1,21 +1,20 @@
 #pragma once
 #include "ofMain.h"
+//#include "noteList.h"
 #include <vector>
 
-class Note {
+class Checkbox {
 private:
     ofRectangle* ofRect;
     int coordX;
     int coordY;
-
+    
 public:
-    Note(ofRectangle* ofRect, int coordX, int coordY);
-    Note();
+    Checkbox(ofRectangle* ofRect, int coordX, int coordY);
+    Checkbox();
     ofRectangle* getOfRectangle();
     int getCoordX();
     int getCoordY();
     
-    void setUpNote();
-    
-    //NoteList noteList;
+    void setUpCheckbox();
 };
