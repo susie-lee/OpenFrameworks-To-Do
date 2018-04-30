@@ -17,3 +17,9 @@ WEEK TWO:
   
     difficulties
   - figuring out how to display lighting on 3D model using ofSetupOpenGL
+  - finding a GUI library to add textbox, might use example
+
+    goals for next week
+  - refactor and finalize object decomposition
+  - add checkbox for completion rather than dragging to flower
+  - have flower grow/wither
