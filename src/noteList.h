@@ -17,6 +17,5 @@ public:
   void drawNotes();
   Note* getNote(int noteNum);
     int mousePressedInside(int x, int y, int button);
-//    bool mouseInside();
     
 };

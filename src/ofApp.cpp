@@ -16,13 +16,9 @@ void window::setup() {
 void window::keyPressed(int key) {
 
     if (key == 'n') {
-//        Status prior = current_status;
       current_status = NEW_NOTE;
-        //current_status = prior;
-        //checkboxList.mouseInside();
-        //checkboxList.mousePressedInside(<#int x#>, <#int y#>, <#int button#>)
 
-//    } else if (key == OF_KEY_F12) {
+    } //else if (key == OF_KEY_F12) {
 //      ofToggleFullscreen();
 //
 //    } else if (current_status == NEW_NOTE) {
@@ -35,34 +31,7 @@ void window::keyPressed(int key) {
 //      } else {
 //        ofAppendUTF8(typeStr,key);
 //      }
-    }
 }
-
-//Note* window::getNote(int rectangleNum) {
-//    for (int i = 0; i < notes.size(); i++) {
-//        if (i == rectangleNum) {
-//            return notes[i];
-//        }
-//    }
-//}
-//
-//bool window::mouseInside(int rectangleNum) {
-//    int mouseX = ofGetMouseX();
-//    int mouseY = ofGetMouseY();
-//
-//    if (mouseX > rectangleNum * 210 && mouseX < rectangleNum * 210 + 200) {
-//        if (mouseY > )
-//    }
-//
-//}
-
-//void window::mousePressed(int x, int y, int button) {
-//    if (button == 0) {
-//        for (int i = 0; i < notes.size(); i++) {
-//
-//        }
-//    }
-//}
 
 void window::mousePressed(int x, int y, int button) {
     cout << noteList.mousePressedInside(x, y, 0);
@@ -73,6 +42,7 @@ void window::mousePressed(int x, int y, int button) {
 
 void window::draw() {
   flower.setPosition(ofGetWidth()*3/4, (float)ofGetHeight() * 0.75 , 0);
+    // Set lighting on flower.
     ofEnableDepthTest();
     ofEnableLighting();
     glEnable(GL_LIGHTING);
@@ -90,13 +60,16 @@ void window::draw() {
     glDisable(GL_NORMALIZE);
     glDisable(GL_LIGHTING);
     
+    // Draw rectangles for textbox and checkbox.
     noteList.drawNotes();
 
+    // Add new note.
     if (current_status == NEW_NOTE) {
         noteList.addNote();
         current_status = THRIVING;
     }
     
+    // Delete a note.
     else if (current_status == DELETE_NOTE) {
         std::cout << "hi";
         noteList.removeNote(mouseX, mouseY);
