@@ -4,14 +4,17 @@
 
 class Note {
 private:
-    ofRectangle* ofRect;
+    ofRectangle* ofPost;
+    ofRectangle* ofCheckbox;
     int coordX;
     int coordY;
 
 public:
-    Note(ofRectangle* ofRect, int coordX, int coordY);
+    Note(ofRectangle* noteRect, ofRectangle* ofCheckbox, int coordX, int coordY);
     Note();
-    ofRectangle* getOfRectangle();
+    ofRectangle* getOfPost();
+    ofRectangle* getOfCheckbox();
     int getCoordX();
     int getCoordY();
+    ~Note();
 };

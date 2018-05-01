@@ -2,7 +2,6 @@
 #include "ofMain.h"
 #include "ofxAssimpModelLoader.h"
 #include "noteList.h"
-#include "checkboxList.h"
 #include <vector>
 
 enum Status {
@@ -10,19 +9,19 @@ enum Status {
   WHITHERING,
   NEAR_DEATH,
   NEW_NOTE,
-  TYPING
+  DELETE_NOTE
 };
 
 class window : public ofBaseApp {
 public:
-  Status current_status = THRIVING;
+  Status current_status;
   void setup();
   void draw();
   void keyPressed(int key);
+    void mousePressed(int x, int y, int button);
 
   ofxAssimpModelLoader flower;
   NoteList noteList;
-    CheckboxList checkboxList;
   string typeStr;
 
   ofTrueTypeFont verdana14;

@@ -1,16 +1,20 @@
 #include "note.h"
 #include <vector>
 
-Note::Note(ofRectangle* ofRect, int coordX, int coordY) :
-    ofRect(ofRect), coordX(coordX), coordY(coordY){
+Note::Note(ofRectangle* ofPost, ofRectangle* ofCheckbox, int coordX, int coordY) :
+    ofPost(ofPost), ofCheckbox(ofCheckbox), coordX(coordX), coordY(coordY){
 }
 
 Note::Note() {
     
 }
 
-ofRectangle* Note::getOfRectangle() {
-    return ofRect;
+ofRectangle* Note::getOfPost() {
+    return ofPost;
+}
+
+ofRectangle* Note::getOfCheckbox() {
+    return ofCheckbox;
 }
 
 int Note::getCoordX() {
@@ -19,4 +23,9 @@ int Note::getCoordX() {
 
 int Note::getCoordY() {
     return coordY;
+}
+
+Note::~Note() {
+    delete ofPost;
+    delete ofCheckbox;
 }
