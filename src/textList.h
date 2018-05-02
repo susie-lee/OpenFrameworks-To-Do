@@ -9,6 +9,7 @@ using namespace std;
 class TextList  {
 private:
     vector<ofxDatGuiTextInput*> texts;
+    vector<ofRectangle*> boxes;
     ofTrueTypeFont font;
 
 public:

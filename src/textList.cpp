@@ -38,22 +38,28 @@ void TextList::addText() {
         
         // Create text input gui.
         ofxDatGuiTextInput* textBox = new ofxDatGuiTextInput("input", "to-do...");
-        textBox->setPosition(placementX + 10, placementY);
+        textBox->setPosition(placementX + 12, placementY);
         textBox->setWidth(285, 0);
         textBox->setOpacity(1);
         
         texts.push_back(textBox);
+        
+        ofRectangle* newBox = new ofRectangle(placementX + 250, placementY + 5, 10, 10);
+        boxes.push_back(newBox);
     }
 }
 
 void TextList::drawTexts() {
     font.load("ofxbraitsch/fonts/Verdana.ttf", 14);
-    for (ofxDatGuiTextInput* text : texts) {
-        text->draw();
+    for (int i = 0; i < texts.size(); i++) {
+        ofSetColor(ofColor::navajoWhite);
+        ofDrawRectangle(*boxes[i]);
+        
         ofSetColor(ofColor::salmon);
-        text->setBackgroundColor(ofColor::lemonChiffon);
-        text->update();
-        font.drawString(text->getText(), text->getX() + 10, text->getY() + 50);
+        texts[i]->setBackgroundColor(ofColor::lemonChiffon);
+        texts[i]->draw();
+        texts[i]->update();
+        font.drawString(texts[i]->getText(), texts[i]->getX() + 10, texts[i]->getY() + 50);
     }
 }
 
@@ -61,9 +67,12 @@ void TextList::drawTexts() {
 TextList::~TextList() {
     for (int i = 0; i < texts.size(); i++) {
         delete texts[i];
+        delete boxes[i];
         texts[i] = NULL;
+        boxes[i] = NULL;
     }
     texts.resize(0);
+    boxes.resize(0);
 }
 
 // Return note at given index.
@@ -80,6 +89,9 @@ void TextList::removeText(int x, int y) {
     int index = mousePressedCheckbox(x, y, 0);
     ofxDatGuiTextInput* toDelete = texts[index];
     texts.erase(texts.begin() + index);
+    
+    ofRectangle* boxToDelete = boxes[index];
+    boxes.erase(boxes.begin() + index);
 }
 
 // Return the index of the note vector if user clicks inside a checkbox.
@@ -90,7 +102,7 @@ int TextList::mousePressedCheckbox(int x, int y, int button) {
             ofxDatGuiTextInput* currentText = getText(i);
 
             // Check if user clicks within the x bounds of checkbox.
-            if (x > currentText->getX() - 10 && x < currentText->getX() + 10) {
+            if (x > currentText->getX() - 12 && x < currentText->getX() + 8) {
 
                 // Check if user clicks within the y bounds of checkbox.
                 if (y > currentText->getY() && y < currentText->getY() + 20) {

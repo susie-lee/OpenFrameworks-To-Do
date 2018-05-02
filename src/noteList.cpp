@@ -48,15 +48,18 @@ void NoteList::addNote() {
         
         // Add note to vector of notes.
         notes.push_back(newNote);
+        
+//        ofRectangle* newBox = new ofRectangle(placementX + 250, placementY + 5, 20, 20);
+//        boxes.push_back(newBox);
     }
 }
 
 void NoteList::drawNotes() {
-  for (Note* note : notes) {
+    for (Note* note : notes) {
       verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
       
       // Draw checkbox.
-      ofSetLineWidth(4);
+      ofSetLineWidth(3);
       ofSetColor(ofColor::mediumSpringGreen);
       ofNoFill();
       ofDrawRectangle(*note->getOfCheckbox());
