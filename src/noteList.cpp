@@ -1,5 +1,7 @@
 #include "noteList.h"
+#include "ofApp.h"
 #include <iostream>
+#include <string>
 
 NoteList::NoteList() {
 }
@@ -40,17 +42,27 @@ void NoteList::addNote() {
         // Create rectangle for checkbox.
         ofRectangle* newOfCheckbox = new ofRectangle(placementX, placementY, 10, 10);
         
+        
+        ofxDatGuiTextInput* textBox = new ofxDatGuiTextInput("input", "to-do...");
+        textBox->setPosition(placementX -5, placementY -5);
+        
+        
         // Create note with textbox rectangle, checkbox rectangle, and the
         // (x,y) for placement.
-        Note *newNote = new Note(newPost, newOfCheckbox, placementX, placementY);
+        Note *newNote = new Note(newPost, newOfCheckbox, textBox, placementX, placementY);
         
         // Add note to vector of notes.
         notes.push_back(newNote);
     }
 }
 
+//void NoteList::onTextInputEvent(ofxDatGuiTextInputEvent e) {
+//    std::cout << e.text << endl;
+//}
+
 void NoteList::drawNotes() {
   for (Note* note : notes) {
+      verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
       
       // Draw checkbox.
       ofSetLineWidth(4);
@@ -62,7 +74,24 @@ void NoteList::drawNotes() {
       ofSetColor(ofColor::lemonChiffon);
       ofFill();
       ofDrawRectangle(*note->getOfPost());
+      
+      //note->getNoteBox()->draw();
+//      (note->getNoteBox())->draw();
   }
+}
+
+void NoteList::printNotes() {
+    for (Note* note : notes) {
+        verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
+//        cout << note->getNoteBox()->getX();
+        if (note->getNoteBox()->getX() == 0) {
+            cout << "idk what's up";
+        }
+        note->getNoteBox()->draw();
+        ofSetColor(ofColor::whiteSmoke);
+        note->getNoteBox()->update();
+        verdana14.drawString(note->getNoteBox()->getText(), note->getCoordX(), note->getCoordY());
+    }
 }
 
 // Destructor for note of vectors.
@@ -85,13 +114,13 @@ Note* NoteList::getNote(int noteNum) {
 
 // Remove note if checkbox is clicked.
 void NoteList::removeNote(int x, int y) {
-    int index = mousePressedInside(x, y, 0);
+    int index = mousePressedCheckbox(x, y, 0);
     Note* toDelete = notes[index];
     notes.erase(notes.begin() + index);
 }
 
 // Return the index of the note vector if user clicks inside a checkbox.
-int NoteList::mousePressedInside(int x, int y, int button) {
+int NoteList::mousePressedCheckbox(int x, int y, int button) {
     // Check if left button is clicked.
     if (button == 0) {
         for (int i = 0; i < notes.size(); i++) {
@@ -111,3 +140,21 @@ int NoteList::mousePressedInside(int x, int y, int button) {
     return -1;
 }
 
+int NoteList::mousePressedBox(int x, int y, int button) {
+    if (button == 0) {
+        for (int i = 0; i < notes.size(); i++) {
+            Note* currentNote = getNote(i);
+            
+            // Check if user clicks within the x bounds of checkbox.
+            if (x > currentNote->getCoordX() && x < currentNote->getCoordX() + 300) {
+                
+                // Check if user clicks within the y bounds of checkbox.
+                if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 180) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+    return -1;
+}
