@@ -1,4 +1,4 @@
-**WEEK ONE: **
+**WEEK ONE:**
     _completed_
   - read through documentation for MyGUI
   - download and set up CMake to be compatible with myGUI library
