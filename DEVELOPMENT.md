@@ -1,4 +1,5 @@
 **WEEK ONE:**
+
     _completed_
   - read through documentation for MyGUI
   - download and set up CMake to be compatible with myGUI library
@@ -10,6 +11,7 @@
   - be able to type tasks in list
 
 **WEEK TWO:**
+
     _completed_
   - change idea to using Blender to develop flower, OF addon
   ofxAssimpModelLoader to load in 3D export
@@ -25,6 +27,7 @@
   - have flower grow/wither
 
 **WEEK THREE:**
+
     _completed_
   - delete notes and their textboxes when 'checkbox' is clicked
   - use OF addon ofxDatGui to use their text input GUI
