@@ -23,7 +23,7 @@ void NoteList::addNote() {
             maxPerRow.push_back(rowExpected * i);
         }
         
-    // TODO: dont cover flower;
+        // TODO: dont cover flower;
         maxPerRow.push_back(maxPerRow.back() + rowExpected);
         
         // Determine x coordinate placement of new note.
@@ -51,10 +51,6 @@ void NoteList::addNote() {
     }
 }
 
-//void NoteList::onTextInputEvent(ofxDatGuiTextInputEvent e) {
-//    std::cout << e.text << endl;
-//}
-
 void NoteList::drawNotes() {
   for (Note* note : notes) {
       verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
@@ -69,25 +65,8 @@ void NoteList::drawNotes() {
       ofSetColor(ofColor::lemonChiffon);
       ofFill();
       ofDrawRectangle(*note->getOfPost());
-      
-      //note->getNoteBox()->draw();
-//      (note->getNoteBox())->draw();
   }
 }
-
-//void NoteList::printNotes() {
-//    for (Note* note : notes) {
-//        verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
-////        cout << note->getNoteBox()->getX();
-//        if (note->getNoteBox()->getX() == 0) {
-//            cout << "idk what's up";
-//        }
-//        note->getNoteBox()->draw();
-//        ofSetColor(ofColor::whiteSmoke);
-//        note->getNoteBox()->update();
-//        verdana14.drawString(note->getNoteBox()->getText(), note->getCoordX(), note->getCoordY());
-//    }
-//}
 
 // Destructor for note of vectors.
 NoteList::~NoteList() {
@@ -126,25 +105,6 @@ int NoteList::mousePressedCheckbox(int x, int y, int button) {
                 
                 // Check if user clicks within the y bounds of checkbox.
                 if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 20) {
-                    return i;
-                }
-            }
-        }
-        return -1;
-    }
-    return -1;
-}
-
-int NoteList::mousePressedBox(int x, int y, int button) {
-    if (button == 0) {
-        for (int i = 0; i < notes.size(); i++) {
-            Note* currentNote = getNote(i);
-            
-            // Check if user clicks within the x bounds of checkbox.
-            if (x > currentNote->getCoordX() && x < currentNote->getCoordX() + 300) {
-                
-                // Check if user clicks within the y bounds of checkbox.
-                if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 180) {
                     return i;
                 }
             }

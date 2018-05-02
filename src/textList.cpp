@@ -36,6 +36,7 @@ void TextList::addText() {
             }
         }
         
+        // Create text input gui.
         ofxDatGuiTextInput* textBox = new ofxDatGuiTextInput("input", "to-do...");
         textBox->setPosition(placementX + 10, placementY);
         textBox->setWidth(285, 0);
@@ -44,10 +45,6 @@ void TextList::addText() {
         texts.push_back(textBox);
     }
 }
-
-//void NoteList::onTextInputEvent(ofxDatGuiTextInputEvent e) {
-//    std::cout << e.text << endl;
-//}
 
 void TextList::drawTexts() {
     font.load("ofxbraitsch/fonts/Verdana.ttf", 14);
@@ -105,22 +102,3 @@ int TextList::mousePressedCheckbox(int x, int y, int button) {
     }
     return -1;
 }
-//
-//int TextList::mousePressedBox(int x, int y, int button) {
-//    if (button == 0) {
-//        for (int i = 0; i < notes.size(); i++) {
-//            ofxDatGuiTextInput* currentNote = getNote(i);
-//
-//            // Check if user clicks within the x bounds of checkbox.
-//            if (x > currentNote->getX() && x < currentNote->getX() + 300) {
-//
-//                // Check if user clicks within the y bounds of checkbox.
-//                if (y > currentNote->getCoordY() && y < currentNote->getCoordY() + 180) {
-//                    return i;
-//                }
-//            }
-//        }
-//        return -1;
-//    }
-//    return -1;
-//}

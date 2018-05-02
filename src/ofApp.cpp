@@ -5,35 +5,29 @@
 #include <iostream>
 
 void window::setup() {
-  ofSetWindowTitle("Flower Productivity");
-  ofBackground(230,230,230);
-  flower.loadModel("flower.obj");
+    ofSetWindowTitle("Flower Productivity");
+    ofBackground(230,230,230);
+    flower.loadModel("flower.obj");
     current_status = THRIVING;
     ofResetElapsedTimeCounter();
 }
 
 void window::keyPressed(int key) {
 
+    // 'N' key to create new note.
     if (key == 'n' && current_status != TYPING) {
         current_status = NEW_NOTE;
 
+    // Enter to finish typing.
     } else if (current_status == TYPING && key == OF_KEY_RETURN) {
         current_status = THRIVING;
     }
-}
-
-void window::onTextInputEvent(ofxDatGuiTextInputEvent e) {
-    cout << e.text << endl;
 }
 
 void window::mousePressed(int x, int y, int button) {
     if (noteList.mousePressedCheckbox(x, y, 0) != -1) {
         current_status = DELETE_NOTE;
     }
-}
-
-void window::update() {
-
 }
 
 void window::draw() {
@@ -62,6 +56,8 @@ void window::draw() {
         noteList.addNote();
         current_status = TYPING;
     }
+    
+    // If user is inputting to-do text into box.
     if (current_status == TYPING) {
         textList.drawTexts();
         noteList.drawNotes();
@@ -75,20 +71,22 @@ void window::draw() {
         ofResetElapsedTimeCounter();
     }
     
+    // Determine if flower should be dying.
     else if (ofGetElapsedTimef() > 10) {//12 hours
         current_status = NEAR_DEATH;
         textList.drawTexts();
         noteList.drawNotes();
         flower.loadModel("dying_flower.obj");
-        cout <<"here";
+        
+    // Determine if flower should be whithering.
     } else if (ofGetElapsedTimef() > 5) { // 8 hours
         current_status = WHITHERING;
         textList.drawTexts();
         noteList.drawNotes();
         flower.loadModel("whithering_flower.obj");
-        cout <<"no here";
     }
     
+    // If flower is thriving.
     else if (current_status == THRIVING) {
         textList.drawTexts();
         noteList.drawNotes();

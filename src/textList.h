@@ -9,19 +9,16 @@ using namespace std;
 class TextList  {
 private:
     vector<ofxDatGuiTextInput*> texts;
-    //int mousePressedInside(int x, int y, int button);
+    ofTrueTypeFont font;
+
 public:
     TextList();
-    ~TextList();
     void addText();
-    void removeText(int x, int y);
     void drawTexts();
-    void printNotes();
+    ~TextList();
     ofxDatGuiTextInput* getText(int textNum);
+    void removeText(int x, int y);
+    void printNotes();
     int mousePressedCheckbox(int x, int y, int button);
-    int mousePressedBox(int x, int y, int button);
-    
-    ofTrueTypeFont font;
-    
 };
 

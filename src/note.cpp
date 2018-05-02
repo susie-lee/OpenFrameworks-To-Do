@@ -17,11 +17,6 @@ ofRectangle* Note::getOfCheckbox() {
     return ofCheckbox;
 }
 
-//ofxDatGuiTextInput* Note::getNoteBox() {
-//    return noteBox;
-//}
-
-
 int Note::getCoordX() {
     return coordX;
 }

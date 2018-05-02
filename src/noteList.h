@@ -10,17 +10,16 @@ using namespace std;
 class NoteList  {
 private:
     vector<Note*> notes;
-    //int mousePressedInside(int x, int y, int button);
+    ofTrueTypeFont verdana14;
+    
 public:
   NoteList();
+    void addNote();
+    void drawNotes();
   ~NoteList();
-  void addNote();
+    Note* getNote(int noteNum);
     void removeNote(int x, int y);
-  void drawNotes();
     void printNotes();
-  Note* getNote(int noteNum);
     int mousePressedCheckbox(int x, int y, int button);
-    int mousePressedBox(int x, int y, int button);
-    ofTrueTypeFont verdana14;
     
 };

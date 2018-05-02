@@ -16,20 +16,17 @@ enum Status {
 };
 
 class window : public ofBaseApp {
+private:
+    Status current_status;
+    ofxAssimpModelLoader flower;
+    NoteList noteList;
+    TextList textList;
+    ofTrueTypeFont font;
+    
 public:
-  Status current_status;
-  void setup();
-    void update();
-  void draw();
-  void keyPressed(int key);
+    void setup();
+    void draw();
+    void keyPressed(int key);
     void mousePressed(int x, int y, int button);
     void onTextInputEvent(ofxDatGuiTextInputEvent e);
-
-  ofxAssimpModelLoader flower;
-  NoteList noteList;
-    TextList textList;
-    
-    ofxDatGuiTextInput* noteInput;
-
-  ofTrueTypeFont font;
 };
