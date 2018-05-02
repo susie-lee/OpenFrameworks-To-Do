@@ -7,7 +7,6 @@ class Note {
 private:
     ofRectangle* ofPost;
     ofRectangle* ofCheckbox;
-//    ofxDatGuiTextInput* noteBox;
     int coordX;
     int coordY;
 
@@ -16,7 +15,6 @@ public:
     Note();
     ofRectangle* getOfPost();
     ofRectangle* getOfCheckbox();
-//    ofxDatGuiTextInput* getNoteBox();
     int getCoordX();
     int getCoordY();
     ~Note();

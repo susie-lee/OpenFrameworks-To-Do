@@ -38,7 +38,8 @@ void TextList::addText() {
         
         ofxDatGuiTextInput* textBox = new ofxDatGuiTextInput("input", "to-do...");
         textBox->setPosition(placementX + 10, placementY);
-        textBox->setWidth(300, 0);
+        textBox->setWidth(285, 0);
+        textBox->setOpacity(1);
         
         texts.push_back(textBox);
     }
@@ -52,7 +53,8 @@ void TextList::drawTexts() {
     font.load("ofxbraitsch/fonts/Verdana.ttf", 14);
     for (ofxDatGuiTextInput* text : texts) {
         text->draw();
-        ofSetColor(ofColor::white);
+        ofSetColor(ofColor::salmon);
+        text->setBackgroundColor(ofColor::lemonChiffon);
         text->update();
         font.drawString(text->getText(), text->getX() + 10, text->getY() + 50);
     }
@@ -82,27 +84,27 @@ void TextList::removeText(int x, int y) {
     ofxDatGuiTextInput* toDelete = texts[index];
     texts.erase(texts.begin() + index);
 }
-//
-//// Return the index of the note vector if user clicks inside a checkbox.
-//int TextList::mousePressedCheckbox(int x, int y, int button) {
-//    // Check if left button is clicked.
-//    if (button == 0) {
-//        for (int i = 0; i < texts.size(); i++) {
-//            ofxDatGuiTextInput* currentText = getText(i);
-//
-//            // Check if user clicks within the x bounds of checkbox.
-//            if (x > currentText->getX() && x < currentText->getX() + 20) {
-//
-//                // Check if user clicks within the y bounds of checkbox.
-//                if (y > currentText->getY() && y < currentText->getY() + 20) {
-//                    return i;
-//                }
-//            }
-//        }
-//        return -1;
-//    }
-//    return -1;
-//}
+
+// Return the index of the note vector if user clicks inside a checkbox.
+int TextList::mousePressedCheckbox(int x, int y, int button) {
+     //Check if left button is clicked.
+    if (button == 0) {
+        for (int i = 0; i < texts.size(); i++) {
+            ofxDatGuiTextInput* currentText = getText(i);
+
+            // Check if user clicks within the x bounds of checkbox.
+            if (x > currentText->getX() - 10 && x < currentText->getX() + 10) {
+
+                // Check if user clicks within the y bounds of checkbox.
+                if (y > currentText->getY() && y < currentText->getY() + 20) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+    return -1;
+}
 //
 //int TextList::mousePressedBox(int x, int y, int button) {
 //    if (button == 0) {
