@@ -75,10 +75,18 @@ void window::draw() {
         ofResetElapsedTimeCounter();
     }
     
-    if (ofGetElapsedTimef() > 35) {//12 hours
+    else if (ofGetElapsedTimef() > 10) {//12 hours
         current_status = NEAR_DEATH;
-    } else if (ofGetElapsedTimef() > 20) { // 8 hours
+        textList.drawTexts();
+        noteList.drawNotes();
+        flower.loadModel("dying_flower.obj");
+        cout <<"here";
+    } else if (ofGetElapsedTimef() > 5) { // 8 hours
         current_status = WHITHERING;
+        textList.drawTexts();
+        noteList.drawNotes();
+        flower.loadModel("whithering_flower.obj");
+        cout <<"no here";
     }
     
     else if (current_status == THRIVING) {
@@ -86,15 +94,4 @@ void window::draw() {
         noteList.drawNotes();
         flower.loadModel("flower.obj");
     }
-    else if (current_status == WHITHERING) {
-        textList.drawTexts();
-        noteList.drawNotes();
-        flower.loadModel("whithering_flower.obj");
-    }
-    else if (current_status == NEAR_DEATH) {
-        textList.drawTexts();
-        noteList.drawNotes();
-        flower.loadModel("dying_flower.obj");
-    }
-
 }
