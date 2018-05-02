@@ -3,6 +3,7 @@
 #include "ofxDatGui.h"
 #include "ofxAssimpModelLoader.h"
 #include "noteList.h"
+#include "textList.h"
 #include <vector>
 
 enum Status {
@@ -26,7 +27,7 @@ public:
 
   ofxAssimpModelLoader flower;
   NoteList noteList;
-//  string* typeStr;
+    TextList textList;
     
     ofxDatGuiTextInput* noteInput;
 

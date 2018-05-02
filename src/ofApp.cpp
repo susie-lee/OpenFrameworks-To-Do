@@ -11,11 +11,11 @@ void window::setup() {
     current_status = THRIVING;
     ofResetElapsedTimeCounter();
     
-    noteInput = new ofxDatGuiTextInput("input", "to-do...");
+    //noteInput = new ofxDatGuiTextInput("input", "to-do...");
     //noteInput->onTextInputEvent(this, &window::onTextInputEvent);
     //noteInput->setWidth(800, 0.2);
-    noteInput->setPosition(300, 300);
-    font.load("ofxbraitsch/fonts/Verdana.ttf", 14);
+    //noteInput->setPosition(300, 300);
+    //font.load("ofxbraitsch/fonts/Verdana.ttf", 14);
 }
 
 void window::keyPressed(int key) {
@@ -100,23 +100,25 @@ void window::draw() {
     glDisable(GL_LIGHTING);
     
     // Draw rectangles for textbox and checkbox.
-    noteList.drawNotes();
+    //noteList.drawNotes();
+    
     //noteList.printNotes();
 
     // Add new note.
     if (current_status == NEW_NOTE) {
-        cout << "lets try";
+        textList.addText();
         noteList.addNote();
-        cout << "hm okay";
         current_status = TYPING;
     }
     if (current_status == TYPING) {
+//        noteInput = new ofxDatGuiTextInput("input", "to-do...");
 //        noteInput->draw();
 //        ofSetColor(ofColor::white);
 //        noteInput->update();
 //        font.drawString(noteInput->getText(), 300, 300);
-////        current_status = THRIVING;
-        noteList.printNotes();
+        textList.drawTexts();
+        noteList.drawNotes();
+//        noteList.printNotes();
     }
     
     // Delete a note.
@@ -124,5 +126,9 @@ void window::draw() {
         noteList.removeNote(mouseX, mouseY);
         current_status = THRIVING;
         ofResetElapsedTimeCounter();
+    }
+    else if (current_status == THRIVING) {
+        textList.drawTexts();
+        noteList.drawNotes();
     }
 }

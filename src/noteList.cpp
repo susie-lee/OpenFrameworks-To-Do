@@ -42,14 +42,9 @@ void NoteList::addNote() {
         // Create rectangle for checkbox.
         ofRectangle* newOfCheckbox = new ofRectangle(placementX, placementY, 10, 10);
         
-        
-        ofxDatGuiTextInput* textBox = new ofxDatGuiTextInput("input", "to-do...");
-        textBox->setPosition(placementX -5, placementY -5);
-        
-        
         // Create note with textbox rectangle, checkbox rectangle, and the
         // (x,y) for placement.
-        Note *newNote = new Note(newPost, newOfCheckbox, textBox, placementX, placementY);
+        Note *newNote = new Note(newPost, newOfCheckbox,placementX, placementY);
         
         // Add note to vector of notes.
         notes.push_back(newNote);
@@ -80,19 +75,19 @@ void NoteList::drawNotes() {
   }
 }
 
-void NoteList::printNotes() {
-    for (Note* note : notes) {
-        verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
-//        cout << note->getNoteBox()->getX();
-        if (note->getNoteBox()->getX() == 0) {
-            cout << "idk what's up";
-        }
-        note->getNoteBox()->draw();
-        ofSetColor(ofColor::whiteSmoke);
-        note->getNoteBox()->update();
-        verdana14.drawString(note->getNoteBox()->getText(), note->getCoordX(), note->getCoordY());
-    }
-}
+//void NoteList::printNotes() {
+//    for (Note* note : notes) {
+//        verdana14.load("ofxbraitsch/fonts/verdana.ttf", 16);
+////        cout << note->getNoteBox()->getX();
+//        if (note->getNoteBox()->getX() == 0) {
+//            cout << "idk what's up";
+//        }
+//        note->getNoteBox()->draw();
+//        ofSetColor(ofColor::whiteSmoke);
+//        note->getNoteBox()->update();
+//        verdana14.drawString(note->getNoteBox()->getText(), note->getCoordX(), note->getCoordY());
+//    }
+//}
 
 // Destructor for note of vectors.
 NoteList::~NoteList() {
