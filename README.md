@@ -1,7 +1,7 @@
 # CS 126 FinalProject
 
 SET UP
-1. go to [Open Frameworks](http://openframeworks.cc/download/) and download the openFrameworks
+1. go to [openFrameworks](http://openframeworks.cc/download/) and download the openFrameworks
 version that is compatible with your operating system.
 2. clone the [ofxDatGui repository](git@github.com:braitsch/ofxDatGui.git)
 into the addons directory in openFrameworks.
