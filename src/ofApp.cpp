@@ -80,10 +80,10 @@ void window::draw() {
         
     // Determine if flower should be whithering.
     } else if (ofGetElapsedTimef() > 5) { // 8 hours
-        current_status = WHITHERING;
+        current_status = WITHERING;
         textList.drawTexts();
         noteList.drawNotes();
-        flower.loadModel("whithering_flower.obj");
+        flower.loadModel("withering_flower.obj");
     }
     
     // If flower is thriving.

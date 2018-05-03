@@ -8,7 +8,7 @@
 
 enum Status {
   THRIVING = 0,
-  WHITHERING,
+  WITHERING,
   NEAR_DEATH,
   NEW_NOTE,
   TYPING,

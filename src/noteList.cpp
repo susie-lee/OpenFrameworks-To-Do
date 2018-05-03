@@ -48,9 +48,6 @@ void NoteList::addNote() {
         
         // Add note to vector of notes.
         notes.push_back(newNote);
-        
-//        ofRectangle* newBox = new ofRectangle(placementX + 250, placementY + 5, 20, 20);
-//        boxes.push_back(newBox);
     }
 }
 
