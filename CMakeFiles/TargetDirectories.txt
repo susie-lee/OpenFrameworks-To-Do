@@ -1,3 +1,0 @@
-/Users/susielee_/of_v0.9.8_osx_release/apps/myApps/final-project-susiel2/CMakeFiles/rebuild_cache.dir
-/Users/susielee_/of_v0.9.8_osx_release/apps/myApps/final-project-susiel2/CMakeFiles/edit_cache.dir
-/Users/susielee_/of_v0.9.8_osx_release/apps/myApps/final-project-susiel2/CMakeFiles/final-project-susiel2.dir
