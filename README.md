@@ -5,8 +5,8 @@ SET UP
 version that is compatible with your operating system.
 2. clone the [ofxDatGui repository](git@github.com:braitsch/ofxDatGui.git)
 into the addons directory in openFrameworks.
-3. follow the [installation instructions](http://braitsch.github.io/ofxDatGui/index.html#installation)
-for ofxDatGui.
+3. open the projectGenerator in the projectGenerator-osx directory. import this
+project and select the 'ofxAssimpModelLoader', 'ofxDatGui', and 'ofxGUi' addons.
 4. clone this repository into the apps/myApps directory in openFrameworks.
 
 HOW TO USE
