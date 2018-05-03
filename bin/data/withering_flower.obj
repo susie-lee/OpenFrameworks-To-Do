@@ -1,6 +1,6 @@
 # Blender v2.79 (sub 0) OBJ File: 'flower.blend'
 # www.blender.org
-mtllib whithering_flower.mtl
+mtllib withering_flower.mtl
 o Sphere.008_Sphere.012
 v -0.302108 -0.212007 -0.362635
 v -0.951469 -0.198403 -1.011997
