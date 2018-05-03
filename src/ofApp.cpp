@@ -15,12 +15,8 @@ void window::setup() {
 void window::keyPressed(int key) {
 
     // 'n' key to create new note.
-    if (key == 'n' && current_status != TYPING) {
+    if (key == 'n') {
         current_status = NEW_NOTE;
-
-    // Enter to finish typing.
-    } else if (current_status == TYPING && key == OF_KEY_RETURN) {
-        current_status = THRIVING;
     }
 }
 
@@ -54,13 +50,7 @@ void window::draw() {
     if (current_status == NEW_NOTE) {
         textList.addText();
         noteList.addNote();
-        current_status = TYPING;
-    }
-    
-    // If user is inputting to-do text into box.
-    if (current_status == TYPING) {
-        textList.drawTexts();
-        noteList.drawNotes();
+        current_status = THRIVING;
     }
     
     // Delete a note.

@@ -12,7 +12,6 @@ enum Status {
   WITHERING,
   NEAR_DEATH,
   NEW_NOTE,
-  TYPING,
   DELETE_NOTE
 };
 
@@ -24,8 +23,8 @@ private:
     TextList textList;
     ofTrueTypeFont font;
     
-    const int withering_seconds = 28800;
-    const int dying_seconds = 43200;
+    const int withering_seconds = 5;
+    const int dying_seconds = 10;
     
 public:
     void setup();
