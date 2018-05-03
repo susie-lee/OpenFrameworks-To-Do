@@ -1,6 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxDatGui.h"
+
 #include <vector>
 
 class Note {

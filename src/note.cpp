@@ -1,4 +1,5 @@
 #include "note.h"
+
 #include <vector>
 
 Note::Note(ofRectangle* ofPost, ofRectangle* ofCheckbox, int coordX, int coordY) :

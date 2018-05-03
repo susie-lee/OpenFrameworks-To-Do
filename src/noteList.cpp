@@ -1,5 +1,6 @@
 #include "noteList.h"
 #include "ofApp.h"
+
 #include <iostream>
 #include <string>
 

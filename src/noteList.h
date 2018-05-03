@@ -2,6 +2,7 @@
 #include "ofMain.h"
 #include "note.h"
 #include "ofxDatGui.h"
+
 #include <vector>
 #include <string>
 
