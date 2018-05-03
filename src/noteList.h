@@ -12,6 +12,8 @@ private:
     vector<Note*> notes;
     ofTrueTypeFont verdana14;
     
+    int const number_of_notes = 25;
+    
 public:
   NoteList();
     void addNote();

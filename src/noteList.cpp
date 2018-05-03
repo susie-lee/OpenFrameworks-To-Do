@@ -9,7 +9,7 @@ NoteList::NoteList() {
 // Function to create a new note.
 void NoteList::addNote() {
     
-    if (notes.size() == 25) {
+    if (notes.size() == number_of_notes) {
         return;
     }
     else {
@@ -23,7 +23,6 @@ void NoteList::addNote() {
             maxPerRow.push_back(rowExpected * i);
         }
         
-        // TODO: dont cover flower;
         maxPerRow.push_back(maxPerRow.back() + rowExpected);
         
         // Determine x coordinate placement of new note.

@@ -23,7 +23,6 @@ void TextList::addText() {
             maxPerRow.push_back(rowExpected * i);
         }
         
-        // TODO: dont cover flower;
         maxPerRow.push_back(maxPerRow.back() + rowExpected);
         
         // Determine x coordinate placement of new text.

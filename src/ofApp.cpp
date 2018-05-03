@@ -14,7 +14,7 @@ void window::setup() {
 
 void window::keyPressed(int key) {
 
-    // 'N' key to create new note.
+    // 'n' key to create new note.
     if (key == 'n' && current_status != TYPING) {
         current_status = NEW_NOTE;
 
@@ -72,14 +72,14 @@ void window::draw() {
     }
     
     // Determine if flower should be dying.
-    else if (ofGetElapsedTimef() > 10) {//12 hours
+    else if (ofGetElapsedTimef() > dying_seconds) {//12 hours
         current_status = NEAR_DEATH;
         textList.drawTexts();
         noteList.drawNotes();
         flower.loadModel("dying_flower.obj");
         
-    // Determine if flower should be whithering.
-    } else if (ofGetElapsedTimef() > 5) { // 8 hours
+    // Determine if flower should be withering.
+    } else if (ofGetElapsedTimef() > withering_seconds) { // 8 hours
         current_status = WITHERING;
         textList.drawTexts();
         noteList.drawNotes();
