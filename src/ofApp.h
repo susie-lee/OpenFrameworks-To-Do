@@ -23,8 +23,8 @@ private:
     TextList textList;
     ofTrueTypeFont font;
     
-    const int withering_seconds = 5;
-    const int dying_seconds = 10;
+    const int withering_seconds = 28800;
+    const int dying_seconds = 43200;
     
 public:
     void setup();
