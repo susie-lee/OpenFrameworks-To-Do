@@ -1,4 +1,4 @@
-# CS 126 FinalProject
+# To Do List
 
 SET UP
 1. go to [openFrameworks](http://openframeworks.cc/download/) and download the openFrameworks
